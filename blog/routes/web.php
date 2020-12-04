@@ -1,6 +1,14 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
+
+use App\Http\Controllers;
+use App\Posts;
+use App\User;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\PostFormRequest;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +25,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Route::middleware('auth')->group(function() {
 
+Route::get('/create','PostController@create')->name('post.create');
+Route::post('/store','PostController@store')->name('post.store');
+Route::get('/myposts','PostController@myposts')->name('post.myposts');
+});
+
+
+
+Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
