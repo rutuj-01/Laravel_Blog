@@ -1,9 +1,10 @@
+@extends('layouts.app')
+
+@section('content')
 <!DOCTYPE html>
 <html>
 <head>
-	<title>
-		Form
-	</title>
+	
 </head>
 <body>
 	<div class="container">
@@ -12,7 +13,7 @@
 			<div class="form-group">
 				<label>Title</label>
 				<br>
-				<input type="text" name="title">
+				<input type="text" name="title" >
 			</div>
 
 			<div class="form-group">
@@ -30,4 +31,5 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
+@endsection
 

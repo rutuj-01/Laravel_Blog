@@ -30,12 +30,14 @@ Route::middleware('auth')->group(function() {
 Route::get('/create','PostController@create')->name('post.create');
 Route::post('/store','PostController@store')->name('post.store');
 Route::get('/myposts','PostController@myposts')->name('post.myposts');
+Route::get('/home','PostController@allpost')->name('post.allpost');
+
 });
 
 
 
 Auth::routes();
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
 
 
 

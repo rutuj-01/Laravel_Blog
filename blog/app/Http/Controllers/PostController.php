@@ -28,9 +28,28 @@ class PostController extends Controller
 		
 		$user_id=auth()->user()->id;
 		$posts=Post:: where('user_id',$user_id)->orderBy('id','desc')->get();
-		echo $posts;
+		
 		return view('posts.myposts',compact('posts'));
 
 	}
+
+    public function allpost()
+    {
+        $user_id=auth()->user()->id;
+        $posts=Post::where('user_id','!=',$user_id)->orderBy('id','desc')->get();
+        return view('home',compact('posts'));
+
+    }
+
+    public function delete()
+    {
+        $user_id=auth()->user()->id;
+        $check=Post::where('user_id',$user_id)->get();
+        if($check)
+        {
+            Post::delete('user_id');
+        }
+        return view('posts.myposts');
+    }
 
 }
