@@ -31,7 +31,9 @@ Route::get('/create','PostController@create')->name('post.create');
 Route::post('/store','PostController@store')->name('post.store');
 Route::get('/myposts','PostController@myposts')->name('post.myposts');
 Route::get('/home','PostController@allpost')->name('post.allpost');
-
+Route::get('/delete/{post_id}','PostController@delete')->name('post.delete');
+Route::get('/edit/{post_id}','PostController@edit')->name('post.edit');
+Route::post('/update/{post_id}','PostController@update')->name('post.update');
 });
 
 

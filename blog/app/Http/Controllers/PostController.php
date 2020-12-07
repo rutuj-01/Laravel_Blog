@@ -41,15 +41,45 @@ class PostController extends Controller
 
     }
 
-    public function delete()
+    public function delete($post_id)
     {
         $user_id=auth()->user()->id;
-        $check=Post::where('user_id',$user_id)->get();
-        if($check)
+        $post=Post::find($post_id);
+        if($post->user_id == $user_id)
         {
-            Post::delete('user_id');
+            $post->delete();
         }
-        return view('posts.myposts');
+        return redirect('myposts');
+    }
+
+    public function edit($post_id)
+    {
+        $user_id=auth()->user()->id;
+        $post=Post::find($post_id);
+        if($post->user_id==$user_id)
+        {
+            return view('posts.edit',compact('post'));
+        }
+        else
+        {
+            return redirect()->route('posts/myposts');
+        }
+
+    }
+
+
+    public function update(Request $request, $post_id)
+    {
+        $user_id=auth()->user()->id;
+        $post=Post::find($post_id);
+        if($post->user_id == $user_id)
+        {
+            $post->title = $request->title;
+            $post->desc=$request->description;
+            $post->save();
+            return redirect('/myposts');
+        }
+        
     }
 
 }

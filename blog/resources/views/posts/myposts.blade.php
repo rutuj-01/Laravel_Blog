@@ -12,7 +12,9 @@
                <div class="card-body">
                 <div class="card-header" style="font-size: 20px">{{ $post->title }}</div>
                 <div class="card-text" style="font-size: 17px">{{ $post->desc }}</div>
-               </div>
+                <a href="{{ route('post.edit',[$post->id]) }}"><button type="button" class="btn btn-primary">Edit</button></a>
+                 <a href="{{ route('post.delete',[$post->id]) }}"><button type="button" class="btn btn-danger">Delete</button>
+               </div></a>
         </div>
     @endforeach
 	</div>
