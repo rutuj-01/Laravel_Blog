@@ -18,7 +18,9 @@
 
 			<div class="form-group">
 				<label>Description</label>
+
 				<br>
+				
 				<input type="text" name="description" value="{{ $post->desc }}">
 			</div>
 

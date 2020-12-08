@@ -12,6 +12,12 @@ class PostController extends Controller
     	return view('posts.index');
     }
 
+    public function get($id)
+    {
+        $posts=Post::findOrFail($id);
+        return view('posts.post',compact('posts'));
+    }
+
     public function store(Request $request)
     {	
     	// echo $request->title;

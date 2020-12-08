@@ -34,6 +34,8 @@ Route::get('/home','PostController@allpost')->name('post.allpost');
 Route::get('/delete/{post_id}','PostController@delete')->name('post.delete');
 Route::get('/edit/{post_id}','PostController@edit')->name('post.edit');
 Route::post('/update/{post_id}','PostController@update')->name('post.update');
+Route::get('/post/{id}','PostController@get')->name('post.single');
+Route::post('/commentor/{post_id}','CommentController@commentor')->name('post.comment');
 });
 
 

@@ -19,7 +19,7 @@
 			<div class="form-group">
 				<label>Description</label>
 				<br>
-				<input type="text" name="description">
+				<textarea class="form-control" name="description" rows="3"></textarea>
 			</div>
 
 			<input type="submit" name="submit">

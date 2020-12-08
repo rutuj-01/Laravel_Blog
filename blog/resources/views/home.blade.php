@@ -9,9 +9,10 @@
                 @foreach($posts as $post)
                   <div class="card">
                        <div class="card-body">
-                        <div class="card-header" style="font-size: 20px">{{ $post->title }}</div>
-                        <div class="card-text" style="font-size: 17px">{{ $post->desc }}</div>
+                        <a href=" {{ route('post.single',[$post->id]) }} "><div class="card-header" style="font-size: 20px">{{ $post->title }}</div></a>
+                        <div class="card-text" style="font-size: 15px">{{ $post->desc }}</div>
                        </div>
+                       <br>
                   </div>
                 @endforeach
             </div>
