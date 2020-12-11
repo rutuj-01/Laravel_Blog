@@ -8,6 +8,9 @@
                   <div class="card">
                        <div class="card-body">
                         <div class="card-header" style="font-size: 20px">{{ $posts->title }}</div>
+                        
+                        
+                        <div class="card-text" ><label>Author:{{ $posts->user->name }} </label>  </div>
                         <div class="card-text" style="font-size: 15px">{{ $posts->desc }}</div>
                        </div>
                        <br>
