@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
-                  <div class="card">
+                  <!-- <div class="card">
                        <div class="card-body">
                         <div class="card-header" style="font-size: 20px">{{ $posts->title }}</div>
                         
@@ -14,8 +14,8 @@
                         <div class="card-text" style="font-size: 15px">{{ $posts->desc }}</div>
                        </div>
                        <br>
-                  </div>  
-
+                  </div>   -->
+                  <single-component></single-component>
                   <form action=" {{ route('post.comment',[$posts->id]) }} " method="post">
                     @csrf
                     <div class='form-group'>
