@@ -1993,8 +1993,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
@@ -37696,19 +37694,24 @@ var staticRenderFns = [
     return _c("div", [
       _c("div", { staticClass: "card" }, [
         _c("div", { staticClass: "card-body" }, [
-          _c("div", {
-            staticClass: "card-header",
-            staticStyle: { "font-size": "20px" }
-          }),
+          _c(
+            "div",
+            {
+              staticClass: "card-header",
+              staticStyle: { "font-size": "20px" }
+            },
+            [_vm._v("Title")]
+          ),
           _vm._v(" "),
           _c("div", { staticClass: "card-text" }, [
             _c("label", [_vm._v("Author: ")])
           ]),
           _vm._v(" "),
-          _c("div", {
-            staticClass: "card-text",
-            staticStyle: { "font-size": "15px" }
-          })
+          _c(
+            "div",
+            { staticClass: "card-text", staticStyle: { "font-size": "15px" } },
+            [_vm._v("DEsc")]
+          )
         ])
       ])
     ])
