@@ -72,7 +72,10 @@ class PostController extends Controller
         }
 
     }
-
+    public function getAll(){
+        $posts=Post::get();
+        return response() -> json(array('posts' => $posts));
+    }
 
     public function update(Request $request, $post_id)
     {
